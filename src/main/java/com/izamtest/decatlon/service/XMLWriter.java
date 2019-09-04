@@ -17,7 +17,8 @@ public class XMLWriter {
     public static void writeResultsToXMLFile(final Map<Integer, List<Athlete>> resultsMap,
                                              final int athletesListSize,
                                              final String filename) {
-        ArrayList<Place> places = new ArrayList(resultsMap.size());
+
+        List<Place> places = new ArrayList<Place>(resultsMap.size());
 
         final AtomicInteger index = new AtomicInteger(); // for counter inside lambda
         index.getAndIncrement(); // places rating should be ordered from 1

@@ -9,14 +9,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CSVParser {
     private static final String SPLITTER = ";";
 
-    public static ArrayList<Athlete> parse(final String pathToCsv) {
-        ArrayList<Athlete> list = null;
+    public static List<Athlete> parse(final String pathToCsv) {
         try (BufferedReader csvReader = new BufferedReader(new FileReader(pathToCsv))) {
-            list = new ArrayList();
+            List<Athlete> list = new ArrayList<Athlete>();
             String row;
             while ((row = csvReader.readLine()) != null) {
                 try {
@@ -29,13 +29,13 @@ public class CSVParser {
                 }
             }
             System.out.println(String.format("Results loaded, total amount of athletes: %d", list.size()));
+            return list;
         } catch (FileNotFoundException fex) {
             System.out.println(String.format("Input file '%s' not found, %s", pathToCsv, fex.getMessage()));
         } catch (IOException iex) {
             System.out.println(String.format("Error while parsing file '%s': %s", pathToCsv, iex.getMessage()));
         }
-
-        return list;
+        return null;
     }
 
     private static Athlete readRow(final String row) throws NumberFormatException {

@@ -20,7 +20,7 @@ public class Application {
             return;
         }
 
-        ArrayList<Athlete> list = CSVParser.parse(args[0]);
+        List<Athlete> list = CSVParser.parse(args[0]);
 
         // get list which is sorted by points descending,
         // and then group results byh points in map
