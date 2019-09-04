@@ -1,4 +1,4 @@
-package com.izamtest.decatlon.common;
+package com.izamtest.decathlon.common;
 
 public enum KindOfSports {
     Run100m(0) ,

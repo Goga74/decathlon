@@ -1,8 +1,8 @@
-package com.izamtest.decatlon.service;
+package com.izamtest.decathlon.service;
 
-import com.izamtest.decatlon.common.Constants;
-import com.izamtest.decatlon.dao.Athlete;
-import com.izamtest.decatlon.model.*;
+import com.izamtest.decathlon.common.Constants;
+import com.izamtest.decathlon.dao.Athlete;
+import com.izamtest.decathlon.model.*;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -28,12 +28,11 @@ public class CSVParser {
                     System.out.println(String.format("Cannot parse results of '%s': %s", row, nex.getMessage()));
                 }
             }
-            System.out.println(String.format("Results loaded, total amount of athletes: %d", list.size()));
             return list;
         } catch (FileNotFoundException fex) {
-            System.out.println(String.format("Input file '%s' not found, %s", pathToCsv, fex.getMessage()));
+            System.err.println(String.format("Input file '%s' not found, %s", pathToCsv, fex.getMessage()));
         } catch (IOException iex) {
-            System.out.println(String.format("Error while parsing file '%s': %s", pathToCsv, iex.getMessage()));
+            System.err.println(String.format("Error while parsing file '%s': %s", pathToCsv, iex.getMessage()));
         }
         return null;
     }

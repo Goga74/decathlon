@@ -1,4 +1,4 @@
-package com.izamtest.decatlon.common;
+package com.izamtest.decathlon.common;
 
 public class Constants {
     public static final int DECATH = 10;
