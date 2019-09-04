@@ -1,4 +1,4 @@
-package com.izamtest.decatlon.common;
+package com.izamtest.decathlon.common;
 
 public class DecathlonConstants {
     private double A,B,C;

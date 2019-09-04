@@ -1,4 +1,6 @@
-import com.izamtest.decatlon.model.*;
+package com.izamtest.decathlon;
+
+import com.izamtest.decathlon.model.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

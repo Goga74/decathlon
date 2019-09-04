@@ -1,7 +1,7 @@
-package com.izamtest.decatlon.model;
+package com.izamtest.decathlon.model;
 
-import com.izamtest.decatlon.common.Constants;
-import com.izamtest.decatlon.common.KindOfSports;
+import com.izamtest.decathlon.common.Constants;
+import com.izamtest.decathlon.common.KindOfSports;
 
 public class ShotPut extends AbstractFieldResult {
     public ShotPut(final String from) {

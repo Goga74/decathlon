@@ -1,6 +1,6 @@
-package com.izamtest.decatlon.model;
+package com.izamtest.decathlon.model;
 
-import com.izamtest.decatlon.common.DecathlonConstants;
+import com.izamtest.decathlon.common.DecathlonConstants;
 
 abstract class AbstractTrackResult extends AbstractDecathlonBaseResult {
     protected int calculate(final DecathlonConstants d) {

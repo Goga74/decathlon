@@ -1,4 +1,4 @@
-package com.izamtest.decatlon.service;
+package com.izamtest.decathlon.service;
 
 import java.io.File;
 
