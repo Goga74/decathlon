@@ -15,6 +15,7 @@ public class XMLWriter {
 
         StringBuffer buf = new StringBuffer();
         buf.append("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n");
+        buf.append("<root>\n");
         buf.append(String.format("<results athletes=\"%d\">\n", athletesListSize));
 
         final AtomicInteger index = new AtomicInteger(); // for counter inside lambda
@@ -35,6 +36,7 @@ public class XMLWriter {
         });
 
         buf.append("</results>\n");
+        buf.append("</root>\n");
         return buf.toString();
     }
 

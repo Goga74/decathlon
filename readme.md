@@ -8,10 +8,14 @@ How to check:
 ```
 java - version
 ```
-
-###Usage:
+#### Build (before usage if no `````jar````` file exists in `````"target"````` subfolder):
 ```
-java -classpath ./target/izam-test-1.0-SNAPSHOT.jar com.izamtest.decatlon.Application <input_filename.csv>
+mvn package assembly:single
+```
+
+### Usage:
+```
+java -classpath ./target/izam-test-1.0-jar-with-dependencies.jar com.izamtest.decatlon.Application <input_filename.csv>
 
 ```
 or 
@@ -19,7 +23,7 @@ or
 under Windows: run.bat <input_filename.csv>
 ```
 
-###Input file requirements:
+### Input file requirements:
 should be text CSV file with comma ```';'``` separators.
 Decimal separator for number values  ```'.' (dot)```,
 time in formats:
@@ -28,7 +32,7 @@ mm.ss.SS - with minutes (mm),
 ss.SS - secounds (ss) and fractions (SS
 ```
 
-###Output: xml file with pointed scores of athletes sorted by descending with grouping by place ordering
+### Output: xml file with pointed scores of athletes sorted by descending with grouping by place ordering
 So first position is the best.
 Athletes with same results shares the one place in order.
 

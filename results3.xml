@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
 <results athletes="7">
 	<place id="1-2">
 		<athlete name="John Smith" points="4202"/>
@@ -16,3 +17,4 @@
 		<athlete name="Foo Bar" points="3101"/>
 	</place>
 </results>
+</root>
