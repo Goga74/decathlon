@@ -1,6 +1,6 @@
 ## Simple tool for scoring [Decathlon](https://en.wikipedia.org/wiki/Decathlon#Benchmarks) results of athletes
 
-Used Java 1.8, JUnit, and JAXB as part of Java libraries since version 1.6
+Used Java 1.8 and JUnit 5
 
 Prerequisites to run: JRE version 1.8
 
@@ -19,7 +19,7 @@ or
 under Windows: run.bat <input_filename.csv>
 ```
 
-###Input file requrirements:
+###Input file requirements:
 should be text CSV file with comma ```';'``` separators.
 Decimal separator for number values  ```'.' (dot)```,
 time in formats:

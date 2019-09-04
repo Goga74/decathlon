@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<results athletes="7">
-    <places id="1-2">
-        <athlete name="John Smith" points="4200"/>
-        <athlete name="Igor Zamyatin" points="4200"/>
-    </places>
-    <places id="3">
-        <athlete name="Jaan Lepp" points="3494"/>
-    </places>
-    <places id="4-6">
-        <athlete name="Bruno Gordo" points="3199"/>
-        <athlete name="Jane Doe" points="3199"/>
-        <athlete name="Travis Daye" points="3199"/>
-    </places>
-    <places id="7">
-        <athlete name="Foo Bar" points="3099"/>
-    </places>
+<results athletes="4">
+	<place id="1">
+		<athlete name="John Smith" points="4202"/>
+	</place>
+	<place id="2">
+		<athlete name="Jaan Lepp" points="3497"/>
+	</place>
+	<place id="3">
+		<athlete name="Jane Doe" points="3202"/>
+	</place>
+	<place id="4">
+		<athlete name="Foo Bar" points="3101"/>
+	</place>
 </results>
