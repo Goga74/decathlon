@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<results athletes="6">
+    <places id="1">
+        <athlete name="John Smith" points="4202"/>
+    </places>
+    <places id="2">
+        <athlete name="Jaan Lepp" points="3497"/>
+    </places>
+    <places id="3-5">
+        <athlete name="Bruno Gordo" points="3202"/>
+        <athlete name="Jane Doe" points="3202"/>
+        <athlete name="Travis Daye" points="3202"/>
+    </places>
+    <places id="6">
+        <athlete name="Foo Bar" points="3101"/>
+    </places>
+</results>

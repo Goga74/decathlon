@@ -1,0 +1,1 @@
+java -classpath ./target/izam-test-1.0-SNAPSHOT.jar com.izamtest.decatlon.Application %1
