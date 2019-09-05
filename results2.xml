@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<results athletes="6">
-	<place id="1">
-		<athlete name="John Smith" points="4202"/>
-	</place>
-	<place id="2">
-		<athlete name="Jaan Lepp" points="3497"/>
-	</place>
-	<place id="3-5">
-		<athlete name="Bruno Gordo" points="3202"/>
-		<athlete name="Jane Doe" points="3202"/>
-		<athlete name="Travis Daye" points="3202"/>
-	</place>
-	<place id="6">
-		<athlete name="Foo Bar" points="3101"/>
-	</place>
-</results>
+<?xml version="1.0" ?><root><results athletes="6"><place id="1"><athlete name="John Smith" points="4202"></athlete></place><place id="2"><athlete name="Jaan Lepp" points="3497"></athlete></place><place id="3-5"><athlete name="Bruno Gordo" points="3202"></athlete><athlete name="Jane Doe" points="3202"></athlete><athlete name="Travis Daye" points="3202"></athlete></place><place id="6"><athlete name="Foo Bar" points="3101"></athlete></place></results></root>

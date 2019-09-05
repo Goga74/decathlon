@@ -5,18 +5,24 @@ import com.izamtest.decathlon.dao.Athlete;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class XMLWriter {
+    private static final String START_INDENT = "\t";
+    private static final String END_LINE = "\n";
+
     public static String writeResultsToXML(final Map<Integer, List<Athlete>> resultsMap,
                                            final int athletesListSize) {
 
         StringBuffer buf = new StringBuffer();
-        buf.append("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n");
-        buf.append("<root>\n");
-        buf.append(String.format("<results athletes=\"%d\">\n", athletesListSize));
+        buf.append("<?xml version=\"1.0\" encoding=\"" + StandardCharsets.UTF_8 + "\" standalone=\"yes\"?>");
+        buf.append(END_LINE);
+        buf.append("<root>");
+        buf.append(END_LINE);
+        buf.append(String.format("<results athletes=\"%d\">%s", athletesListSize, END_LINE));
 
         final AtomicInteger index = new AtomicInteger(); // for counter inside lambda
         index.getAndIncrement(); // places rating should be ordered from 1
@@ -26,20 +32,23 @@ public class XMLWriter {
                     String.format("%d", index.getAndIncrement()) :
                     String.format("%d-%d", index.getAndAdd(athletesList.size() - 1), index.getAndIncrement());
 
-            buf.append(String.format("\t<place id=\"%s\">\n", place));
+            buf.append(String.format("%s<place id=\"%s\">%s", START_INDENT, place, END_LINE));
 
-            for (Athlete athlete : athletesList) {
-                buf.append("\t\t" + athlete.toXMLString() + "\n");
+            for (Athlete athlete: athletesList) {
+                buf.append(String.format("%s%s%s%s", START_INDENT, START_INDENT, athlete.toXMLString(), END_LINE));
             }
 
-            buf.append("\t</place>\n");
+            buf.append(START_INDENT);
+            buf.append("</place>");
+            buf.append(END_LINE);
         });
 
-        buf.append("</results>\n");
-        buf.append("</root>\n");
+        buf.append("</results>");
+        buf.append(END_LINE);
+        buf.append("</root>");
+        buf.append(END_LINE);
         return buf.toString();
     }
-
 
     public static void writeContentToFile(final String filename, final String content) {
         // If the file exists, overwrite

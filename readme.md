@@ -15,12 +15,15 @@ mvn package assembly:single
 
 ### Usage:
 ```
-java -classpath ./target/izam-test-1.0-jar-with-dependencies.jar com.izamtest.decatlon.Application <input_filename.csv>
+java -classpath ./target/izam-test-1.0-jar-with-dependencies.jar com.izamtest.decatlon.Application <input_filename.csv> [xml write method=SAX|simple]
 
 ```
 or 
 ```
-under Windows: run.bat <input_filename.csv>
+under Windows: run.bat <input_filename.csv> [xml write method=SAX|simple]
+
+where default xml write method is simple 'String' implementation.
+and SAX write method is implamentation based on SAX classes 
 ```
 
 ### Input file requirements:

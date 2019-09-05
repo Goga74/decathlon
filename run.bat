@@ -1,1 +1,1 @@
-java -classpath ./target/izam-test-1.0-jar-with-dependencies.jar com.izamtest.decathlon.Application %1
+java -classpath ./target/izam-test-1.0-jar-with-dependencies.jar com.izamtest.decathlon.Application %1 %2

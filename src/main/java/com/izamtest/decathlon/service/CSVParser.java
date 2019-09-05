@@ -16,7 +16,7 @@ public class CSVParser {
 
     public static List<Athlete> parse(final String pathToCsv) {
         try (BufferedReader csvReader = new BufferedReader(new FileReader(pathToCsv))) {
-            List<Athlete> list = new ArrayList<Athlete>();
+            List<Athlete> list = new ArrayList<>();
             String row;
             while ((row = csvReader.readLine()) != null) {
                 try {
@@ -25,19 +25,21 @@ public class CSVParser {
                         list.add(athlete);
                     }
                 } catch (NumberFormatException nex) {
-                    System.out.println(String.format("Cannot parse results of '%s': %s", row, nex.getMessage()));
+                    System.err.println(String.format("Cannot parse results of '%s': %s", row, nex.getMessage()));
                 }
             }
             return list;
-        } catch (FileNotFoundException fex) {
-            System.err.println(String.format("Input file '%s' not found, %s", pathToCsv, fex.getMessage()));
-        } catch (IOException iex) {
-            System.err.println(String.format("Error while parsing file '%s': %s", pathToCsv, iex.getMessage()));
+        } catch (FileNotFoundException ex) {
+            System.err.println(String.format("Input file '%s' not found, %s", pathToCsv, ex.getMessage()));
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            System.err.println(String.format("Error while reading file '%s': %s", pathToCsv, ex.getMessage()));
+            ex.printStackTrace();
         }
         return null;
     }
 
-    private static Athlete readRow(final String row) throws NumberFormatException {
+    public static Athlete readRow(final String row) throws NumberFormatException {
         String[] data = row.split(SPLITTER);
         final ArrayList<AbstractDecathlonBaseResult> results = new ArrayList<>(Constants.DECATH);
 

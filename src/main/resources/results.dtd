@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE root [
+        <!ELEMENT root (results)>
+        <!ELEMENT results (place)>
+        <!ATTLIST results athletes CDATA "0">
+        <!ELEMENT place (athlete)>
+        <!ATTLIST place id CDATA #REQUIRED>
+        <!ELEMENT athlete (name, points)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT points (#PCDATA)>
+]>

@@ -19,6 +19,10 @@ public class Athlete {
         return this.results;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     public int getTotalPoints() {
         return this.totalPoints;
     }
