@@ -5,6 +5,7 @@ import com.izamtest.decathlon.service.CSVParser;
 import com.izamtest.decathlon.service.SAXXMLWriter;
 import com.izamtest.decathlon.service.XMLWriter;
 import com.izamtest.decathlon.validation.XMLValidator;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,16 +20,20 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class XMLReaderWriterIntegrationTest {
-    private List<Athlete> list;
-    private Map<Integer, List<Athlete>> map;
+    private List<Athlete> list = new ArrayList<>(1);
+    private Map<Integer, List<Athlete>> map = new HashMap<>();
 
     @BeforeEach
     private void setUp() {
         Athlete a = CSVParser.readRow("Bruno Gordo;13.04;4.53;7.79;1.55;64.72;18.74;24.20;2.40;28.20;6.50.76");
-        list = new ArrayList<Athlete>(1);
         list.add(a);
-        map = new HashMap<Integer, List<Athlete>>();
         map.put(3202, list);
+    }
+
+    @AfterEach
+    private void clear() {
+        list.clear();
+        map.clear();
     }
 
     @Test
@@ -51,7 +56,7 @@ class XMLReaderWriterIntegrationTest {
                 try {
                     buf.append(row);
                 } catch (NumberFormatException nex) {
-                    System.err.println(String.format("Cannot parse results of '%s': %s", row, nex.getMessage()));
+                    System.err.format("Cannot parse results of '%s': %s", row, nex.getMessage());
                 }
             }
         } catch (IOException e) {

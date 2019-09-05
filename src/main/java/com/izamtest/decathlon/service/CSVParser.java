@@ -25,15 +25,15 @@ public class CSVParser {
                         list.add(athlete);
                     }
                 } catch (NumberFormatException nex) {
-                    System.err.println(String.format("Cannot parse results of '%s': %s", row, nex.getMessage()));
+                    System.err.format("Cannot parse results of '%s': %s", row, nex.getMessage());
                 }
             }
             return list;
         } catch (FileNotFoundException ex) {
-            System.err.println(String.format("Input file '%s' not found, %s", pathToCsv, ex.getMessage()));
+            System.err.format("Input file '%s' not found, %s", pathToCsv, ex.getMessage());
             ex.printStackTrace();
         } catch (IOException ex) {
-            System.err.println(String.format("Error while reading file '%s': %s", pathToCsv, ex.getMessage()));
+            System.err.format("Error while reading file '%s': %s", pathToCsv, ex.getMessage());
             ex.printStackTrace();
         }
         return null;

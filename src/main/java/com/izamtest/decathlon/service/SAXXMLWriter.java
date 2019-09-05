@@ -47,8 +47,8 @@ public class SAXXMLWriter {
 
                     out.writeEndElement();
                 } catch (XMLStreamException xex) {
-                    System.err.println(String.format("Error while writing athlete (place id:%d) %s",
-                            index.get(), xex.getMessage()));
+                    System.err.format("Error while writing athlete (place id:%d) %s",
+                            index.get(), xex.getMessage());
                 }
             });
 
